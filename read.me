@@ -1,0 +1,41 @@
+
+
+för kön
+
+gå ner i wildfly home  / bin
+
+
+kör jboss-cli  (command line interface
+
+kör
+jms-queue add --queue-address= jms.queue.AppQueue --entries=java:/jms/queue/appQueue
+
+
+avsluta cli:n
+
+verifiera  i standalone.xml att  nedanstående finns 
+<jms-queue name="jms.queue.AppQueue" entries="java:/jms/queue/appQueue"/>
+
+
+verifiera också  
+
+databas
+
+
+
+               <datasource jndi-name="java:jboss/datasources/SimpleDS" pool-name="SimpleDS" enabled="true" use-java-context="true" statistics-enabled="${wildfly.datasources.statistics-enabled:${wildfly.statistics-enabled:false}}">
+                    <connection-url>jdbc:postgresql://localhost:5432/databas</connection-url>
+                    <driver>postgresql</driver>
+                    <security>
+                        <user-name>postgres</user-name>
+                        <password>postgres</password>
+                    </security>
+                </datasource>
+   
+   
+   och
+   
+                      <driver name="postgresql" module="org.postgresql">
+                        <driver-class>org.postgresql.Driver</driver-class>
+                    </driver>
+ 
