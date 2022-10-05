@@ -20,7 +20,7 @@
 		<assertj-core.version>3.8.0</assertj-core.version>
 		<version.logback>1.1.7</version.logback>
 		<jersey.version>2.29</jersey.version>
-		<jackson.version>2.10.1</jackson.version>
+		<jackson.version>2.12.6.1</jackson.version>
 		<eclipse.metrics.version>2.0.1</eclipse.metrics.version>
 
 	</properties>
